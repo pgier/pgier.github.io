@@ -1,0 +1,77 @@
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" version="2.0"><channel><title>Code Grinder</title><description>Thoughts, stories and ideas.</description><link>http://localhost:2368/</link><generator>Ghost 0.11</generator><lastBuildDate>Wed, 15 Feb 2017 03:33:47 GMT</lastBuildDate><atom:link href="http://localhost:2368/rss/" rel="self" type="application/rss+xml"/><ttl>60</ttl><item><title>Cat, Fish, Bird Problem</title><description>&lt;p&gt;I recently came across a logic/math puzzle from &lt;a href="https://www.youtube.com/watch?v=dx2ZdHlPjKA&amp;amp;t=4s"&gt;Mind Your Decisions&lt;/a&gt;, and I thought it would be fun to solve the puzzle in both Go and Haskell. I'm still a beginner in both languages, so this seemed like a fun way to practice my skills and experiment with the&lt;/p&gt;</description><link>http://localhost:2368/trying-out-go-and-haskell/</link><guid isPermaLink="false">fa247c4c-1c68-4fcb-9e74-d38f0b2fd966</guid><dc:creator>Paul Gier</dc:creator><pubDate>Tue, 14 Feb 2017 22:53:55 GMT</pubDate><content:encoded>&lt;p&gt;I recently came across a logic/math puzzle from &lt;a href="https://www.youtube.com/watch?v=dx2ZdHlPjKA&amp;amp;t=4s"&gt;Mind Your Decisions&lt;/a&gt;, and I thought it would be fun to solve the puzzle in both Go and Haskell. I'm still a beginner in both languages, so this seemed like a fun way to practice my skills and experiment with the different approaches of an imperative vs. a functional language.&lt;/p&gt;
+
+&lt;p&gt;The problem is this: &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A child purchases 100 toy animals for $100.  Each toy cat costs $10.00, each toy fish costs $3.00, and each toy bird costs $0.50.  How many of each did the child buy?
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;For the Go solution I tried using nested loops, basically testing each possible combination with some minor optimizations. This was significantly more difficult to get right than I thought it would be. I had to think through the logic and fix mistakes several times before I got it working correctly.&lt;/p&gt;
+
+&lt;p&gt;When I switched to Haskell, I decided to try using list comprehensions and filters, but wasn't sure how difficult this would be given that I still don't really know what I'm doing in Haskell (or functional languages in general). I had a bit of difficulty getting the right types and converting between floats and ints. However, once that was fixed, I wrote the filter to select the correct answer(s) and it basically worked on the first attempt. It was a huge difference from trying to deal with the logic in the loops in Go. In Haskell it felt much more like I was writing code focused on the problem domain instead of trying to design an algorithm as I did in Go.  The resulting Haskell code seems simpler and more readable to me, and in addition, the Haskell version found all the possible answers instead of just the first answer like the Go solution!&lt;/p&gt;
+
+&lt;p&gt;I'm sure my solutions are by no means optimal in either language, but it was a nice learning experience to see the difference between an imperative approach a more functional approach to solving the problem.  The code is of course up on my github account if you would like to take a look: &lt;a href="https://github.com/pgier/experiments/tree/master/catfishbird"&gt;https://github.com/pgier/experiments/tree/master/catfishbird&lt;/a&gt;&lt;/p&gt;</content:encoded></item><item><title>Welcome to Ghost</title><description>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list&lt;/p&gt;</description><link>http://localhost:2368/welcome-to-ghost-2/</link><guid isPermaLink="false">aeedee1a-5f25-4037-b9c2-46972f7fa92a</guid><category>Getting Started</category><dc:creator>Paul Gier</dc:creator><pubDate>Tue, 14 Feb 2017 22:33:38 GMT</pubDate><content:encoded>&lt;p&gt;You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you started. You can manage your content by signing in to the admin area at &lt;code&gt;&amp;lt;your blog URL&amp;gt;/ghost/&lt;/code&gt;. When you arrive, you can select this post from a list on the left and see a preview of it on the right. Click the little pencil icon at the top of the preview to edit this post and read the next section!&lt;/p&gt;
+
+&lt;h2 id="gettingstarted"&gt;Getting Started&lt;/h2&gt;
+
+&lt;p&gt;Ghost uses something called Markdown for writing. Essentially, it's a shorthand way to manage your post formatting as you write!&lt;/p&gt;
+
+&lt;p&gt;Writing in Markdown is really easy. In the left hand panel of Ghost, you simply write as you normally would. Where appropriate, you can use &lt;em&gt;shortcuts&lt;/em&gt; to &lt;strong&gt;style&lt;/strong&gt; your content. For example, a list:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Item number one&lt;/li&gt;
+&lt;li&gt;Item number two
+&lt;ul&gt;&lt;li&gt;A nested item&lt;/li&gt;&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;A final item&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;or with numbers!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Remember to buy some milk  &lt;/li&gt;
+&lt;li&gt;Drink the milk  &lt;/li&gt;
+&lt;li&gt;Tweet that I remembered to buy the milk, and drank it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3 id="links"&gt;Links&lt;/h3&gt;
+
+&lt;p&gt;Want to link to a source? No problem. If you paste in a URL, like &lt;a href="http://ghost.org"&gt;http://ghost.org&lt;/a&gt; - it'll automatically be linked up. But if you want to customise your anchor text, you can do that too! Here's a link to &lt;a href="http://ghost.org"&gt;the Ghost website&lt;/a&gt;. Neat.&lt;/p&gt;
+
+&lt;h3 id="whataboutimages"&gt;What about Images?&lt;/h3&gt;
+
+&lt;p&gt;Images work too! Already know the URL of the image you want to include in your article? Simply paste it in like this to make it show up:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="https://ghost.org/images/ghost.png" alt="The Ghost Logo"&gt;&lt;/p&gt;
+
+&lt;p&gt;Not sure which image you want to use yet? That's ok too. Leave yourself a descriptive placeholder and keep writing. Come back later and drag and drop the image in to upload:&lt;/p&gt;
+
+&lt;h3 id="quoting"&gt;Quoting&lt;/h3&gt;
+
+&lt;p&gt;Sometimes a link isn't enough, you want to quote someone on what they've said. Perhaps you've started using a new blogging platform and feel the sudden urge to share their slogan? A quote might be just the way to do it!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Ghost - Just a blogging platform&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h3 id="workingwithcode"&gt;Working with Code&lt;/h3&gt;
+
+&lt;p&gt;Got a streak of geek? We've got you covered there, too. You can write inline &lt;code&gt;&amp;lt;code&amp;gt;&lt;/code&gt; blocks really easily with back ticks. Want to show off something more comprehensive? 4 spaces of indentation gets you there.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.awesome-thing {
+    display: block;
+    width: 100%;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id="readyforabreak"&gt;Ready for a Break?&lt;/h3&gt;
+
+&lt;p&gt;Throw 3 or more dashes down on any new line and you've got yourself a fancy new divider. Aw yeah.&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;h3 id="advancedusage"&gt;Advanced Usage&lt;/h3&gt;
+
+&lt;p&gt;There's one fantastic secret about Markdown. If you want, you can write plain old HTML and it'll still work! Very flexible.&lt;/p&gt;
+
+&lt;p&gt;&lt;input type="text" placeholder="I'm an input field!"&gt;&lt;/p&gt;
+
+&lt;p&gt;That should be enough to get you started. Have fun - and let us know what you think :)&lt;/p&gt;</content:encoded></item></channel></rss>

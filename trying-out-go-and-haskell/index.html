@@ -1,0 +1,175 @@
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Cat, Fish, Bird Problem</title>
+    <meta name="description" content="">
+
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="../favicon.ico">
+
+    <link rel="stylesheet" type="text/css" href="../assets/css/screen.css?v=f2eb60f875">
+    <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Merriweather:300,700,700italic,300italic%7COpen+Sans:700,400">
+
+    <link rel="canonical" href="index.html">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <link rel="amphtml" href="amp/index.html">
+    
+    <meta property="og:site_name" content="Code Grinder">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Cat, Fish, Bird Problem">
+    <meta property="og:description" content="I recently came across a logic/math puzzle from Mind Your Decisions, and I thought it would be fun to solve the puzzle in both Go and Haskell. I'm still a beginner in both languages, so this seemed like a fun way to practice my skills and experiment with the">
+    <meta property="og:url" content="http://localhost:2368/trying-out-go-and-haskell/">
+    <meta property="article:published_time" content="2017-02-14T22:53:55.000Z">
+    <meta property="article:modified_time" content="2017-02-15T03:01:27.000Z">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Cat, Fish, Bird Problem">
+    <meta name="twitter:description" content="I recently came across a logic/math puzzle from Mind Your Decisions, and I thought it would be fun to solve the puzzle in both Go and Haskell. I'm still a beginner in both languages, so this seemed like a fun way to practice my skills and experiment with the">
+    <meta name="twitter:url" content="http://localhost:2368/trying-out-go-and-haskell/">
+    <meta name="twitter:label1" content="Written by">
+    <meta name="twitter:data1" content="Paul Gier">
+    
+    <script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "publisher": {
+        "@type": "Organization",
+        "name": "Code Grinder",
+        "logo": "http://localhost:2368/ghost/img/ghosticon.jpg"
+    },
+    "author": {
+        "@type": "Person",
+        "name": "Paul Gier",
+        "url": "http://localhost:2368/author/pgier/",
+        "sameAs": [],
+        "description": "Software Engineer at Red Hat."
+    },
+    "headline": "Cat, Fish, Bird Problem",
+    "url": "http://localhost:2368/trying-out-go-and-haskell/",
+    "datePublished": "2017-02-14T22:53:55.000Z",
+    "dateModified": "2017-02-15T03:01:27.000Z",
+    "description": "I recently came across a logic/math puzzle from Mind Your Decisions, and I thought it would be fun to solve the puzzle in both Go and Haskell. I&#x27;m still a beginner in both languages, so this seemed like a fun way to practice my skills and experiment with the",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http://localhost:2368"
+    }
+}
+    </script>
+
+    <meta name="generator" content="Ghost 0.11">
+    <link rel="alternate" type="application/rss+xml" title="Code Grinder" href="../rss/index.html">
+</head>
+<body class="post-template nav-closed">
+
+    <div class="nav">
+    <h3 class="nav-title">Menu</h3>
+    <a href="index.html#" class="nav-close">
+        <span class="hidden">Close</span>
+    </a>
+    <ul>
+            <li class="nav-home" role="presentation"><a href="../">Home</a></li>
+    </ul>
+        <a class="subscribe-button icon-feed" href="../rss/index.rss">Subscribe</a>
+</div>
+<span class="nav-cover"></span>
+
+
+    <div class="site-wrapper">
+
+        
+
+
+<header class="main-header post-head no-cover">
+    <nav class="main-nav  clearfix">
+        
+            <a class="menu-button icon-menu" href="index.html#"><span class="word">Menu</span></a>
+    </nav>
+</header>
+
+<main class="content" role="main">
+    <article class="post">
+
+        <header class="post-header">
+            <h1 class="post-title">Cat, Fish, Bird Problem</h1>
+            <section class="post-meta">
+                <time class="post-date" datetime="2017-02-14">14 February 2017</time> 
+            </section>
+        </header>
+
+        <section class="post-content">
+            <p>I recently came across a logic/math puzzle from <a href="https://www.youtube.com/watch?v=dx2ZdHlPjKA&amp;t=4s">Mind Your Decisions</a>, and I thought it would be fun to solve the puzzle in both Go and Haskell. I'm still a beginner in both languages, so this seemed like a fun way to practice my skills and experiment with the different approaches of an imperative vs. a functional language.</p>
+
+<p>The problem is this: </p>
+
+<pre><code>A child purchases 100 toy animals for $100.  Each toy cat costs $10.00, each toy fish costs $3.00, and each toy bird costs $0.50.  How many of each did the child buy?
+</code></pre>
+
+<p>For the Go solution I tried using nested loops, basically testing each possible combination with some minor optimizations. This was significantly more difficult to get right than I thought it would be. I had to think through the logic and fix mistakes several times before I got it working correctly.</p>
+
+<p>When I switched to Haskell, I decided to try using list comprehensions and filters, but wasn't sure how difficult this would be given that I still don't really know what I'm doing in Haskell (or functional languages in general). I had a bit of difficulty getting the right types and converting between floats and ints. However, once that was fixed, I wrote the filter to select the correct answer(s) and it basically worked on the first attempt. It was a huge difference from trying to deal with the logic in the loops in Go. In Haskell it felt much more like I was writing code focused on the problem domain instead of trying to design an algorithm as I did in Go.  The resulting Haskell code seems simpler and more readable to me, and in addition, the Haskell version found all the possible answers instead of just the first answer like the Go solution!</p>
+
+<p>I'm sure my solutions are by no means optimal in either language, but it was a nice learning experience to see the difference between an imperative approach a more functional approach to solving the problem.  The code is of course up on my github account if you would like to take a look: <a href="https://github.com/pgier/experiments/tree/master/catfishbird">https://github.com/pgier/experiments/tree/master/catfishbird</a></p>
+        </section>
+
+        <footer class="post-footer">
+
+
+
+            <section class="author">
+                <h4><a href="../author/pgier/">Paul Gier</a></h4>
+
+                    <p>Software Engineer at Red Hat.</p>
+                <div class="author-meta">
+                    <span class="author-location icon-location">Austin, TX</span>
+                    
+                </div>
+            </section>
+
+
+            <section class="share">
+                <h4>Share this post</h4>
+                <a class="icon-twitter" href="https://twitter.com/intent/tweet?text=Cat%2C%20Fish%2C%20Bird%20Problem&amp;url=http://localhost:2368/trying-out-go-and-haskell/" onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                    <span class="hidden">Twitter</span>
+                </a>
+                <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u=http://localhost:2368/trying-out-go-and-haskell/" onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                    <span class="hidden">Facebook</span>
+                </a>
+                <a class="icon-google-plus" href="https://plus.google.com/share?url=http://localhost:2368/trying-out-go-and-haskell/" onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                    <span class="hidden">Google+</span>
+                </a>
+            </section>
+
+
+        </footer>
+
+    </article>
+</main>
+
+<aside class="read-next">
+    <a class="read-next-story prev no-cover" href="../welcome-to-ghost-2/">
+        <section class="post">
+            <h2>Welcome to Ghost</h2>
+            <p>You're live! Nice. We've put together a little post to introduce you to the Ghost editor and get you…</p>
+        </section>
+    </a>
+</aside>
+
+
+
+        <footer class="site-footer clearfix">
+            <section class="copyright"><a href="../">Code Grinder</a> © 2017</section>
+            <section class="poweredby">Proudly published with <a href="https://ghost.org">Ghost</a></section>
+        </footer>
+
+    </div>
+
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    
+    <script type="text/javascript" src="../assets/js/jquery.fitvids.js?v=f2eb60f875"></script>
+    <script type="text/javascript" src="../assets/js/index.js?v=f2eb60f875"></script>
+
+</body>
